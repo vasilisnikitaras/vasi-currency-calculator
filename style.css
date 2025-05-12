@@ -1,0 +1,71 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Modern font */
+    background: linear-gradient(to bottom, #007bff, #ffffff); /* Gradient background */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
+    border-radius: 12px; /* Rounded corners */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    color: #555;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Rounded corners */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue hover effect */
+}
+
+#result {
+    text-align: center;
+    font-size: 1.5em; /* Larger font size */
+    color: green; /* Highlight converted amount */
+    font-weight: bold; /* Bold text for emphasis */
+}
+
+/* Media Query for Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em; /* Adjust font size for smaller screens */
+    }
+}
