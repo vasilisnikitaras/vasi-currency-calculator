@@ -1,0 +1,39 @@
+<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="https://violet-hettie-20.tiiny.site/manifest.json">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Exchange Calculator</h1>
+        <form id="exchangeForm">
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="fromCurrency">From Currency:</label>
+            <select id="fromCurrency" name="fromCurrency"></select>
+
+            <label for="toCurrency">To Currency:</label>
+            <select id="toCurrency" name="toCurrency"></select>
+
+            <button type="button" id="calculateButton">Calculate</button>
+        </form>
+        <div id="result"></div>
+    </div>
+  
+   <div>
+      <footer>
+        <p>© 2024 [Created by Vasileios.Nikitaras]. All rights reserved.</p>
+      </footer>
+    </div>
+  
+  
+    <script src="script.js"></script>
+</body>
+</html>
