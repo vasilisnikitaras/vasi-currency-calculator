@@ -57,6 +57,11 @@ select {
   transition: border-color 0.2s ease-in-out;
 }
 
+/* Center the input text (and red validation "i") */
+input[type="number"] {
+  text-align: center;
+}
+
 input:focus,
 select:focus {
   outline: none;
@@ -89,12 +94,14 @@ button:hover {
   font-size: 1.5em;
   font-weight: bold;
   color: green;
+  text-align: center;
 }
 
 #lastUpdated {
   margin-top: 10px;
   font-size: 0.9em;
   color: #555;
+  text-align: center;
 }
 
 .home-button {
@@ -104,4 +111,25 @@ button:hover {
   border: none;
   color: #ffffff;
   font-size: 1em;
-  text
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.home-button:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
