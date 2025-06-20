@@ -58,10 +58,12 @@ select {
 }
 
 /* Center the input text (and red validation "i") */
+
+/*
 input[type="number"] {
   text-align: center;
 }
-
+*/
 
 input[type="number"] {
   text-align: center;
