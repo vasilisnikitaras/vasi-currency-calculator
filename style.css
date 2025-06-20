@@ -7,7 +7,10 @@ body {
 }
 
 .container {
-  max-width: 500px;
+/*  max-width: 500px; */
+  .container {
+  max-width: 560px; /* Or try 580px if you want even more space */
+
   margin: 50px auto;
   padding: 25px 20px;
   background-color: #ffffff;
@@ -34,11 +37,18 @@ form {
   justify-content: space-between;
   gap: 10px;
 }
-
+/*
 .form-group {
   flex: 1;
   min-width: 45%;
   text-align: left;
+}
+*/
+
+  .form-group {
+  flex: 1;
+  min-width: 45%;
+  text-align: center;
 }
 
 label {
@@ -52,6 +62,10 @@ input,
 select {
   width: 100%;
   padding: 10px;
+  input,
+select {
+  padding: 10px 14px; /* wider horizontal padding */
+}
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1em;
