@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const swapButton = document.getElementById('swapButton');
   const apiKey = '10c926d4dc859726ed7b53db';
 
-  // 🔃 Fetch and populate currency codes
+  // Load all supported currencies
   fetch(`https://v6.exchangerate-api.com/v6/${apiKey}/codes`)
     .then(response => response.json())
     .then(data => {
@@ -18,14 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
         fromCurrencySelect.value = 'USD';
         toCurrencySelect.value = 'CAD';
       } else {
-        console.error('Failed to load currency codes:', data.error_type);
+        console.error('Currency code fetch failed:', data['error-type']);
       }
     })
     .catch(error => {
-      console.error('Error fetching currency codes:', error);
+      console.error('Error fetching currency list:', error);
     });
 
-  // 🔁 Swap logic
+  // Swap currencies on button click
   swapButton.addEventListener('click', () => {
     const temp = fromCurrencySelect.value;
     fromCurrencySelect.value = toCurrencySelect.value;
@@ -35,38 +35,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.getElementById('calculateButton').addEventListener('click', function () {
   const amount = parseFloat(document.getElementById('amount').value);
-  const fromCurrency = document.getElementById('fromCurrency').value;
-  const toCurrency = document.getElementById('toCurrency').value;
+  const from = document.getElementById('fromCurrency').value;
+  const to = document.getElementById('toCurrency').value;
   const resultDiv = document.getElementById('result');
-  const timestampDiv = document.getElementById('lastUpdated');
+  const timeDiv = document.getElementById('lastUpdated');
   const apiKey = '10c926d4dc859726ed7b53db';
 
   if (isNaN(amount) || amount <= 0) {
     resultDiv.textContent = 'Please enter a valid amount.';
-    timestampDiv.textContent = '';
+    timeDiv.textContent = '';
     return;
   }
 
-  const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${fromCurrency}/${toCurrency}`;
+  const url = `https://v6.exchangerate-api.com/v6/${apiKey}/pair/${from}/${to}`;
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
       if (data.result === 'success') {
         const rate = data.conversion_rate;
-        const converted = (amount * rate).toFixed(2);
-        const updatedTime = new Date(data.time_last_update_utc);
-
-        resultDiv.textContent = `${amount} ${fromCurrency} = ${converted} ${toCurrency}`;
-        timestampDiv.textContent = `Last updated: ${updatedTime.toLocaleString()}`;
+        const converted = (rate * amount).toFixed(2);
+        const updated = new Date(data.time_last_update_utc);
+        resultDiv.textContent = `${amount} ${from} = ${converted} ${to}`;
+        timeDiv.textContent = `Last updated: ${updated.toLocaleString()}`;
       } else {
-        resultDiv.textContent = 'Conversion failed. Please try again later.';
-        timestampDiv.textContent = '';
+        resultDiv.textContent = 'Exchange rate not available.';
+        timeDiv.textContent = '';
       }
     })
     .catch(error => {
       resultDiv.textContent = 'Error fetching exchange rate.';
-      timestampDiv.textContent = '';
+      timeDiv.textContent = '';
       console.error('API Error:', error);
     });
 });
