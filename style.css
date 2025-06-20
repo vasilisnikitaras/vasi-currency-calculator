@@ -1,71 +1,107 @@
 body {
-    font-family: 'Roboto', Arial, sans-serif; /* Modern font */
-    background: linear-gradient(to bottom, #007bff, #ffffff); /* Gradient background */
-    margin: 0;
-    padding: 0;
-    text-align: center;
-
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(to bottom, #007bff, #ffffff);
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 
 .container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
-    border-radius: 12px; /* Rounded corners */
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
 }
 
 h1 {
-    text-align: center;
-    color: #333;
+  color: #333;
+  font-size: 1.8em;
+  margin-bottom: 20px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 45%;
+  text-align: left;
 }
 
 label {
-    margin: 10px 0 5px;
-    color: #555;
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: 500;
 }
 
-input, select, button {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px; /* Rounded corners */
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.2s ease-in-out;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
 }
 
 button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    border: none;
-    border-radius: 8px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition effect */
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue hover effect */
+  background-color: #0056b3;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 #result {
-    text-align: center;
-    font-size: 1.5em; /* Larger font size */
-    color: green; /* Highlight converted amount */
-    font-weight: bold; /* Bold text for emphasis */
+  margin-top: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: green;
 }
 
-/* Media Query for Responsive Design */
-@media (max-width: 600px) {
-    .container {
-        margin: 20px;
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 1.5em; /* Adjust font size for smaller screens */
-    }
+#lastUpdated {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: #555;
 }
+
+.home-button {
+  margin-top: 15px;
+  margin-left: 15px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1em;
+  text
