@@ -63,7 +63,7 @@ label {
   font-weight: 600;
   font-size: 0.95em;
 }
-
+/*
 input,
 select {
   width: 100%;
@@ -75,6 +75,19 @@ select {
   text-align: center;
   background-color: #f9f9f9;
 }
+*/
+input, select {
+    width: 90%;
+    padding: 14px 24px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border-color 0.2s ease-in-out;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+
 
 input[type="number"] {
   -moz-appearance: textfield;
