@@ -5,17 +5,7 @@ body {
   padding: 0;
   text-align: center;
 }
-/*
-.container {
-  max-width: 640px;
-  margin: 60px auto;
-  padding: 32px 36px;
-  background-color: #ffffff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  transform: translateX(-4px);
-}
-*/
+
 .container {
   max-width: 480px;
   margin: 48px auto;
@@ -24,6 +14,7 @@ body {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   border-radius: 18px;
 }
+
 h1 {
   color: #222;
   font-size: 2em;
@@ -57,10 +48,9 @@ label {
   font-weight: 600;
   font-size: 0.95em;
 }
-/*
-input,
-select {
-  width: 100%;
+
+input, select {
+  width: 90%;
   padding: 14px 24px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -69,17 +59,7 @@ select {
   text-align: center;
   background-color: #f9f9f9;
 }
-*/
-input, select {
-    width: 90%;
-    padding: 14px 24px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 1em;
-    transition: border-color 0.2s ease-in-out;
-    text-align: center;
-    background-color: #f9f9f9;
-}
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -119,12 +99,28 @@ button:hover {
   margin-top: 16px;
 }
 
+#error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#error.hidden {
+  display: none;
+}
+
+#error.visible {
+  display: block;
+}
+
 #result {
   margin-top: 24px;
   font-size: 1.6em;
   font-weight: bold;
   color: green;
   text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
 
 #lastUpdated {
@@ -150,6 +146,17 @@ button:hover {
   color: #e0e0e0;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     margin: 20px;
@@ -164,28 +171,11 @@ button:hover {
   .form-row {
     flex-direction: column;
   }
-}
 
-
-/* Fade-in animation for result */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .error-message {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
   }
 }
-
-#result {
-  margin-top: 24px;
-  font-size: 1.6em;
-  font-weight: bold;
-  color: green;
-  text-align: center;
-  opacity: 0;
-  animation: fadeIn 0.3s ease-in-out forwards;
-}
-
