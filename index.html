@@ -6,9 +6,8 @@
   <title>Currency Exchange Calculator</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="manifest" href="manifest.json" />
-  <!-- Place this inside your <head> -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -41,6 +40,9 @@
         <button type="button" id="swapButton">🔄 Swap</button>
       </div>
     </form>
+
+    <!-- 🔴 Error message added below the form -->
+    <p class="error-message" id="error" style="display: none;">Please enter a valid amount</p>
 
     <section id="result" class="result-display"></section>
     <div id="lastUpdated" class="timestamp"></div>
